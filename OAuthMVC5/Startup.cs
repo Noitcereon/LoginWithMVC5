@@ -34,6 +34,7 @@ namespace OAuthMVC5
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireNonAlphanumeric = false;
@@ -41,6 +42,13 @@ namespace OAuthMVC5
                 options.Password.RequireLowercase = false;
             });
             services.AddControllersWithViews();
+
+            services.AddAuthentication().AddTwitter(twitterOptions =>
+            {
+                twitterOptions.ConsumerKey = "F8h3aLkYAVBdLlkVUtPQzp5xQ";
+                twitterOptions.ConsumerSecret = "PWIHDyQqPxNGHVD1IDm92KlgkErcZAGy0pTF4cVBMSRaBP6Dfs";
+                twitterOptions.RetrieveUserDetails = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
