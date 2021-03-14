@@ -43,12 +43,12 @@ namespace OAuthMVC5
             });
             services.AddControllersWithViews();
 
-            services.AddAuthentication().AddTwitter(twitterOptions =>
-            {
-                twitterOptions.ConsumerKey = "F8h3aLkYAVBdLlkVUtPQzp5xQ";
-                twitterOptions.ConsumerSecret = "PWIHDyQqPxNGHVD1IDm92KlgkErcZAGy0pTF4cVBMSRaBP6Dfs";
-                twitterOptions.RetrieveUserDetails = true;
-            });
+            //services.AddAuthentication().AddTwitter(twitterOptions =>
+            //{
+            //    twitterOptions.ConsumerKey = "F8h3aLkYAVBdLlkVUtPQzp5xQ";
+            //    twitterOptions.ConsumerSecret = "PWIHDyQqPxNGHVD1IDm92KlgkErcZAGy0pTF4cVBMSRaBP6Dfs";
+            //    twitterOptions.RetrieveUserDetails = true;
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
